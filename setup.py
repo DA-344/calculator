@@ -8,6 +8,6 @@ setup(
     author="Developer Anonymous#8593",
     author_email="developeranonymous_buss@hotmail.com",
     url="https://github.com/Developer-Anony",
-    packages=['distutils']
+    packages=[]
 
 )
