@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     
-    name="Interactive Calculator",
+    name="interactive_calculator",
     version="1.0.0",
     description="Una calculadora interactiva en la terminal",
     author="Developer Anonymous#8593",
