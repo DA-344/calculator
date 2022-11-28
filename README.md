@@ -17,17 +17,14 @@ Para realizar una operación es tan fácil como depurar el archivo main.py que v
 
 Una vez depurado en la consola te saltará un mensaje, escribes tu operación y te acabará dando el resultado
 
-    ![Ejemplo operación](/images/operacion1.png)
+![Ejemplo operación](/images/operacion1.png)
 
 ## Tengo errores, ¿qué hago?
 
 Para reportar errores simplemente pinche [aquí](https://github.com/Developer-Anony/calc-in-terminal/issues "Centro de reporte de errores")
 
--------------------------
-|                        |
-|                        |
-|   GRACIAS POR LEER     |
-|     ATENTAMENTE:       |
-|   DEVELOPER ANONYMOUS  |
-|                        |
--------------------------
+
+                        
+GRACIAS POR LEER     
+ATENTAMENTE:       
+DEVELOPER ANONYMOUS  
