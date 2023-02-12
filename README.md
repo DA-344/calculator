@@ -11,7 +11,7 @@
 
 ## ¿Cómo realizo una operación?
 
-Para realizar una operación es tan fácil como depurar el archivo main.py que viene por defecto con el paquete o crear tu propio archivo.
+¡Para realizar una operación importa el paquete y ya está!
 
 > Siempre necesitarás importar la carpeta `./reqs` si quieres crear tu archivo de depuración customizado
 
