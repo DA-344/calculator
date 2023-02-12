@@ -13,7 +13,7 @@
 
 ¡Para realizar una operación importa el paquete y ya está!
 
-> Siempre necesitarás importar la carpeta `./reqs` si quieres crear tu archivo de depuración customizado
+> Siempre necesitarás importar la carpeta `./extensions/operaciones` si quieres crear tu archivo de depuración personalizado.
 
 Una vez depurado en la consola te saltará un mensaje, escribes tu operación y te acabará dando el resultado
 
@@ -22,9 +22,3 @@ Una vez depurado en la consola te saltará un mensaje, escribes tu operación y 
 ## Tengo errores, ¿qué hago?
 
 Para reportar errores simplemente pinche [aquí](https://github.com/Developer-Anony/calc-in-terminal/issues "Centro de reporte de errores")
-
-
-                        
-GRACIAS POR LEER     
-ATENTAMENTE:       
-DEVELOPER ANONYMOUS  

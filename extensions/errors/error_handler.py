@@ -4,10 +4,13 @@ from typing import Dict, List, Optional, TYPE_CHECKING, Any, Tuple, Union
 
 __all__ = (
     'LibraryException',
+    'CalculatorError',
     'InvalidObject',
     'InvalidOperation',
     'OperationError',
-    'ZeroDivision'
+    'ZeroDivision',
+    'IsInteractive',
+    'MissingParameter',
 )
 
 class LibraryException(Exception):
@@ -18,6 +21,14 @@ class LibraryException(Exception):
     """
 
     pass
+
+class CalculatorError(LibraryException):
+    """
+    Excepción madre de los errores relacionados con la calculadora y sus parámetros.
+    """
+
+    pass
+
 
 def _flatten_error_dict(d: Dict[str, Any], key: str = '') -> Dict[str, str]:
     items: List[Tuple[str, str]] = []
@@ -103,3 +114,49 @@ class ZeroDivision(OperationError):
         self.param: Any = param
 
         super().__init__(f'{self.mensaje}: El parámetro {self.param} no puede ser cero.')
+
+class IsInteractive(CalculatorError):
+    """
+    Error invocado cuando alguna operación, al ser ejecutada, tiene el parámetro :param:`interactive` en :bool:`True` y ha especificado los parámetro :param:`num1` y :param:`num2`.
+
+    Atributos
+    -----------
+    mensaje: :Optional:`str`
+        El mensaje de respuesta del error
+
+    params: :Union::Parameter: `List | Any`
+    """
+
+    def __init__(self, mensaje: Optional[str], params:Union[List, Any]) -> None:
+        self.mensaje: str = mensaje if mensaje else "ERROR CACHED"
+        self.params = params
+
+        fmt = '{0}: Mientras la calculadora era interactiva se ha(n) proporcionado el/los parámetro(s) {1}'
+
+        
+
+
+        super().__init__(fmt.format(self.mensaje, self.params))
+
+class MissingParameter(CalculatorError):
+    """
+    Error invocado cuando alguna operación, al ser ejecutada, requiere de los parámetros :param:`num1` y/o :param:`num2` cuando :param:`interactive` era :bool:`False`
+
+    Atributos
+    -----------
+    mensaje: :Optional:`str`
+        El mensaje de respuesta del error
+
+    params: :Union::Parameter: `List | Any`
+    """
+
+    def __init__(self, mensaje:Optional[str], params: Union[List, Any]) -> None:
+        self.mensaje: str = mensaje if mensaje else "ERROR CACHED"
+        self.params = params
+
+        fmt = '{0}: Mientras la calculadora no era interactiva no se ha(n) proporcionado el/los parámetro(s) {1}'
+
+        
+
+
+        super().__init__(fmt.format(self.mensaje, self.params))
