@@ -16,7 +16,7 @@
 
 > Siempre necesitarás importar la carpeta `./extensions/operaciones` si quieres crear tu archivo de depuración personalizado.
 
-Una vez depurado en la consola te saltará un mensaje, escribes tu operación y te acabará dando el resultado
+Una vez depurado en la consola te saltará un mensaje y la podras usar tranquilamente
 
 ![Ejemplo operación](/images/operacion1.png)
 
