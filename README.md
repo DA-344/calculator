@@ -1,6 +1,6 @@
 
 # Calculadora interactiva
-<a href=""> Also, read in English </a>
+<a href="https://github.com/Developer-Anony/calculator/blob/beta/README.md#english-interactive-calculator"> Also, read in English </a>
 
 > La herramienta jamás vista en tus manos
 
