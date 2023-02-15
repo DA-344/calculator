@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "calculator_terminal"
-version = "1.1.0"
+version = "1.1.1"
 authors = [
   { name="Developer Anonymous", email="developeranonymous_buss@hotmail.com" },
 ]
-description = "A small example package"
+description = "La mejor calculadora para tu proyecto de Python"
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
@@ -18,5 +18,5 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/Developer-Anony/calc-in-terminal"
-"Bug Tracker" = "https://github.com/Developer-Anony/calc-in-terminal/issues"
+"Homepage" = "https://github.com/Developer-Anony/calculator"
+"Bug Tracker" = "https://github.com/Developer-Anony/calculator/issues"
