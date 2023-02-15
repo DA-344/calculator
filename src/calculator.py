@@ -1,7 +1,6 @@
 from extensions.operaciones import Operacion; from extensions.operaciones import Suma, Resta, Multiplicacion, Division
 from extensions.errors.error_handler import *
 from typing import Union, Optional, Tuple, Dict
-
 def Calcular(interactive:bool = False, operacion:Operacion = Suma, *, num1:Optional[Union[int, float]] = None, num2:Optional[Union[int, float]] = None) -> None:
     """
     Ejecuta una suma.
@@ -119,5 +118,3 @@ def Calcular(interactive:bool = False, operacion:Operacion = Suma, *, num1:Optio
             resultado: int = num1/num2
 
         return resultado
-
-print(Calcular(True, Suma))
