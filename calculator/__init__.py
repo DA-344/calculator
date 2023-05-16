@@ -27,6 +27,7 @@ from typing import NamedTuple, Literal
 
 from .calculator_release import *
 
+
 class VersionInfo(NamedTuple):
     major: int
     minor: int

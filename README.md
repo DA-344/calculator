@@ -40,7 +40,7 @@ Para reportar errores simplemente pinche [aquí](https://github.com/Developer-An
 
 When you finished debugging, the console will tell you that it finished and you can now use it normally!
 
-![Ejemplo operación](https://github.com/Developer-Anony/calculator/blob/tree/beta/images/operacion1.png)
+![Ejemplo operación](https://github.com/Developer-Anony/calculator/blob/tree/release/images/operacion1.png)
 
 ## I found a bug, what do I need to do?
 For reporting bugs you can easily click [here](https://github.com/Developer-Anony/calculator/issues "Centro de reporte de errores")
