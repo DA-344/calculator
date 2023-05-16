@@ -68,6 +68,3 @@ class Calculator:
             result /= num
         
         return result
-    
-
-print(Calculator(4, 10).factorize())
