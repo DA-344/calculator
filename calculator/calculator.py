@@ -1,120 +1,73 @@
-from .extensions.operaciones import Operacion; from extensions.operaciones import Suma, Resta, Multiplicacion, Division
-from .extensions.errors.error_handler import *
-from typing import Union, Optional, Tuple, Dict
-def Calcular(interactive:bool = False, operacion:Operacion = Suma, *, num1:Optional[Union[int, float]] = None, num2:Optional[Union[int, float]] = None) -> None:
-    """
-    Ejecuta una suma.
+class Calculator:
 
-    Atributos
-    -----------
-    interactive: :class:`bool`
-        Si la calculadora debería ser interactiva (respuesta en la terminal).
-        En caso de ser :bool:`True`, los parámetros :param:`num1` y :param:`num2` no deben de ser especificados.
-        En caso de ser :bool:`False`, los parámetro :param:`num1` y :param:`num2` deben de ser especificados.
+    from typing import Union as __union, Optional as __optional, Any as __any, List as __list, Dict as __dict
 
-    operacion: :class:`Operacion`
-        La operación a realizar.
+    def __init__(self, *nums: __union[int, float]) -> None:
+        """
+        The Calculator class, before specifying an operation don't forget to give the numbers.
+        Syntax i.e.:
+        ```py
+        Calculator([1, 2, 3]).add()
+        ```
+        """
 
-    num1: :Optional::Union:`int | float`
-        El primer número a ser calculado.
-        Si este parámetro es especificiado mientras :param:`interactive` es :bool:`True` saltará un error.
+        self.nums = nums
 
-    num2: :Optional::Union:`int | float`
-        El segundo número a ser calculado.
-        Si este parámetro es especificado mientras :param:`interactive` es :bool:`True` saltará un error.
+    
+    def add(self, **kwgs: __any) -> __union[int, float]:
+        """
+        Adds every number given in Calculator class.
+        """
+        rounded: bool = kwgs.pop('rounded', False)
 
-    Excepciones
-    -----------
-    IsInteractive
-        Cuando se ha proporcionado los parámetro :param:`num1` y :param:`num2` mientras :param:`interactive` era :bool:`True`
+        return sum(self.nums) if rounded == False else round(sum(self.nums))
+    
+    
+    def substract(self, **kwgs: __any) -> __union[int, float]:
+        """
+        Substracts the numbers given in Calculator class.
+        """
 
-    MissingParameter
-        Cuando no se ha proporcionado uno o los dos de los parámetro :param:`num1` y :param:`num2` mientras :param:`interactive` era :bool:`False`
-    """
+        rounded: bool = kwgs.pop('rounded', False)
 
-    if interactive == True:
-        if num1 != None or num2 != None:
-            if num1 != None and num2 != None:
-                raise IsInteractive(None, ("num1, num2"))
+        result = self.nums[0]
 
-            elif num1 != None and num2 == None:
-                raise IsInteractive(None, "num1")
+        for num in self.nums[1:]:
+            result = result - num
 
-            elif num1 == None and num2 != None:
-                raise IsInteractive(None, "num2")
 
-        if operacion not in [Suma, Resta, Multiplicacion, Division]:
-            raise InvalidOperation(None, "operacion")
+        return result if rounded == False else round(result)
+    
+    @property
+    def numbers(self) -> __list[__union[int, float]]:
+        return self.nums
+    
+    def factorize(self, **kwgs: __any) -> __dict[int, str]:
+        """
+        Factorizes all the numbers diven in Calculator class.
+        Should raise errors due to some dicts limitations
+        """
 
-        if operacion == Suma:
-            num1 = int(input("¿Cuál sería el primer número?\n"))
-            num2 = int(input("¿Cuál sería el segundo número?\n"))
+        nums = {}
 
-            oper = Suma.__name__
+        for n in self.nums:
+            txt: str
 
-            resultado: int = num1+num2
+            for i in range(n + 1):
+                if i != 0:
+                    if n % i == 0:
+                        
+                        nums[int(n)] += f"{i},"
 
-        if operacion == Resta:
-            num1 = int(input("¿Cuál sería el primer número?\n"))
-            num2 = int(input("¿Cuál sería el segundo número?\n"))
-
-            oper = Resta.__name__
-
-            resultado: int = num1-num2
-
-        if operacion == Multiplicacion:
-            num1 = int(input("¿Cuál sería el primer número?\n"))
-            num2 = int(input("¿Cuál sería el segundo número?\n"))
-
-            oper = Multiplicacion.__name__
-
-            resultado: int = num1*num2
-
-        if operacion == Division:
-            num1 = int(input("¿Cuál sería el primer número?\n"))
-            num2 = int(input("¿Cuál sería el segundo número?\n"))
-
-            if num2 == 0:
-                raise ZeroDivision(None, "num2")
-
-            oper = Division.__name__
-
-            resultado: int = num1/num2
-
-        print("La {} de".format(oper.lower()), str(num1) ,"y", str(num2) ,"es" + "\n" + str(resultado))
+        return nums
+    
+    def divide(self) -> __union[int, float]:
+        """Divides the first number by the second, then divides the result by the third, etc."""
+        result = self.nums[0]
+        for num in self.nums[1:]:
+            result /= num
         
+        return result
+    
 
-    if interactive == False:
-        if num1 == None or num2 == None:
-            if num1 == None and num2 == None:
-                raise MissingParameter(None, ("num1, num2"))
-
-            elif num1 == None and num2 != None:
-                raise MissingParameter(None, "num1")
-
-            elif num1 != None and num2 == None:
-                raise MissingParameter(None, "num2")
-
-
-        if operacion not in [Suma, Resta, Multiplicacion, Division]:
-            raise InvalidOperation(None, "operacion")
-
-        num1 = int(num1)
-        num2 = int(num2)
-
-        if operacion == Suma:
-            resultado: int = num1+num2
-
-        if operacion == Resta:
-            resultado: int = num1-num2
-
-        if operacion == Multiplicacion:
-            resultado: int = num1*num2
-
-        if operacion == Division:
-            if num2 == 0:
-                raise ZeroDivision(None, "num2")
-
-            resultado: int = num1/num2
-
-        return resultado
+print(Calculator(4, 10).factorize())

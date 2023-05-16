@@ -8,18 +8,19 @@ Una calculadora funcional en tus manos.
 :license: Apache, mira LICENSE para más detalles.
 """
 
-__title__ = 'calculator'
-__author__ = 'Developer Anonymous'
-__license__ = 'Apache'
-__copyright__ = 'Copyright 2023-presentado Developer Anonymous'
-__version__ = '1.1.0'
+__title__ = "calculator"
+__author__ = "Developer Anonymous"
+__license__ = "Apache"
+__copyright__ = "Copyright 2023-presentado Developer Anonymous"
+__version__ = "1.2.0a1"
 
-__path__ = __import__('pkgutil').extend_path(__path__, __name__)
+__path__ = __import__("pkgutil").extend_path(__path__, __name__)
 
 import logging
 from typing import NamedTuple, Literal
 
 from .calculator import *
+
 
 class VersionInfo(NamedTuple):
     major: int
@@ -28,7 +29,10 @@ class VersionInfo(NamedTuple):
     releaselevel: Literal["alpha", "beta", "candidate", "final"]
     serial: int
 
-version_info: VersionInfo = VersionInfo(major=1, minor=1, micro=0, releaselevel='beta', serial=0)
+
+version_info: VersionInfo = VersionInfo(
+    major=1, minor=1, micro=0, releaselevel="beta", serial=0
+)
 
 logging.getLogger(__name__).addHandler(logging.NullHandler())
 
