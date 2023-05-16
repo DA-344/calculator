@@ -1,11 +1,17 @@
 """
-Calculator In Terminal
-~~~~~~~~~~~~~~~~~~~~
+calculator
+----------
 
-Una calculadora funcional en tus manos.
+Multifunctional calculator.
+Easy syntax, i.e.:
+```py
+from calculator import Calculator
 
-:copyright: (c) 2023-presente Developer Anonymous
-:license: Apache, mira LICENSE para más detalles.
+# To execute an addition
+result = Calculator(1, 2).add()
+
+print(result) # Prints 3 (1+2)
+```
 """
 
 __title__ = "calculator"
@@ -20,7 +26,6 @@ import logging
 from typing import NamedTuple, Literal
 
 from .calculator_release import *
-
 
 class VersionInfo(NamedTuple):
     major: int

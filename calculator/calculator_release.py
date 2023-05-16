@@ -11,7 +11,7 @@ class Calculator:
         ```
         """
 
-        self.nums = nums
+        self.__nums = nums
 
     
     def add(self, **kwgs: __any) -> __union[int, float]:
@@ -20,7 +20,7 @@ class Calculator:
         """
         rounded: bool = kwgs.pop('rounded', False)
 
-        return sum(self.nums) if rounded == False else round(sum(self.nums))
+        return sum(self.__nums) if rounded == False else round(sum(self.__nums))
     
     
     def substract(self, **kwgs: __any) -> __union[int, float]:
@@ -30,9 +30,9 @@ class Calculator:
 
         rounded: bool = kwgs.pop('rounded', False)
 
-        result = self.nums[0]
+        result = self.__nums[0]
 
-        for num in self.nums[1:]:
+        for num in self.__nums[1:]:
             result = result - num
 
 
@@ -40,7 +40,7 @@ class Calculator:
     
     @property
     def numbers(self) -> __list[__union[int, float]]:
-        return self.nums
+        return self.__nums
     
     def factorize(self, **kwgs: __any) -> __dict[int, str]:
         """
@@ -50,7 +50,7 @@ class Calculator:
 
         nums = {}
 
-        for n in self.nums:
+        for n in self.__nums:
             txt: str
 
             for i in range(n + 1):
@@ -63,8 +63,10 @@ class Calculator:
     
     def divide(self) -> __union[int, float]:
         """Divides the first number by the second, then divides the result by the third, etc."""
-        result = self.nums[0]
-        for num in self.nums[1:]:
+        result = self.__nums[0]
+        for num in self.__nums[1:]:
             result /= num
         
         return result
+    
+del Calculator.__any, Calculator.__union, Calculator.__dict, Calculator.__optional, Calculator.__list
