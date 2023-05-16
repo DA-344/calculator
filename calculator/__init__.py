@@ -19,7 +19,7 @@ __path__ = __import__("pkgutil").extend_path(__path__, __name__)
 import logging
 from typing import NamedTuple, Literal
 
-from .calculator import *
+from .calculator_release import *
 
 
 class VersionInfo(NamedTuple):
@@ -31,7 +31,7 @@ class VersionInfo(NamedTuple):
 
 
 version_info: VersionInfo = VersionInfo(
-    major=1, minor=1, micro=0, releaselevel="beta", serial=0
+    major=1, minor=2, micro=0, releaselevel="alpha", serial=1
 )
 
 logging.getLogger(__name__).addHandler(logging.NullHandler())
